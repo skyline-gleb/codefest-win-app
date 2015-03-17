@@ -23,18 +23,21 @@
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,12,0,0">
             <TextBlock Text="{Binding ConferenceTitle}" 
-                       Style="{ThemeResource TitleTextBlockStyle}" />
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       AutomationProperties.AutomationId="ConferenceTitleTextBlock"/>
             <TextBlock Text="{Binding Title}" 
                        Style="{ThemeResource HeaderTextBlockStyle}" 
                        Margin="0,-6.5,0,6.5" 
-                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+                       AutomationProperties.AutomationId="SpeakerNameTextBlock"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Margin="9.5,0">
             <StackPanel Margin="5,0">
-                <userControls:ProfileControl Margin="0,10"/>
+                <userControls:ProfileControl Margin="0,10" AutomationProperties.AutomationId="SpeakerProfileControl"/>
                 <ListView ItemsSource="{Binding Source={StaticResource LecturesSource}}"
                           IsItemClickEnabled="True"
-                          ItemClick="LecturesListView_OnItemClick">
+                          ItemClick="LecturesListView_OnItemClick"
+                          AutomationProperties.AutomationId="LecturesSourceListView">
                     <ListView.GroupStyle>
                         <GroupStyle HidesIfEmpty="True" HeaderTemplate="{StaticResource SmallTextUnborderedGroupHeaderTemplate}"/>
                     </ListView.GroupStyle>
