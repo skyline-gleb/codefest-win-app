@@ -14,10 +14,12 @@
             <Hub.Header>
                 <StackPanel Margin="0,30,0,0">
                     <TextBlock Text="{Binding ConferenceTitle}"
-                               Style="{ThemeResource TitleTextBlockStyle}" />
+                               Style="{ThemeResource TitleTextBlockStyle}"
+                               AutomationProperties.AutomationId="ConferenceTitleTextBlock"/>
                     <TextBlock Text="{Binding Title}"
                                Style="{ThemeResource HeaderTextBlockStyle}"
-                               CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+                               CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+                               AutomationProperties.AutomationId="LectureTitleTextBlock"/>
                 </StackPanel>
             </Hub.Header>
             <HubSection>
@@ -38,7 +40,8 @@
                         <ScrollViewer Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
                             <TextBlock Text="{Binding Description}" 
                                        FontSize="16" 
-                                       TextWrapping="WrapWholeWords"/>
+                                       TextWrapping="WrapWholeWords"
+                                       AutomationProperties.AutomationId="LectureDescriptionTextBlock"/>
                         </ScrollViewer>
                         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                                     Margin="20,15">
