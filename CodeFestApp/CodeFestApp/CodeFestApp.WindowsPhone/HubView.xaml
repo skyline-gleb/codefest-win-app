@@ -32,7 +32,8 @@
             </Hub.HeaderTemplate>
 
             <HubSection Header="{Binding DaysSectionTitle}"
-                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}"
+                        AutomationProperties.AutomationId="DaysHubSection">
                 <DataTemplate>
                     <ListView ItemsSource="{Binding Days}"
                               ItemTemplate="{StaticResource ManyImagesTileWithTitleItemTemplate}"
@@ -42,7 +43,8 @@
             </HubSection>
 
             <HubSection Header="{Binding TracksSectionTitle}"
-                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}"
+                        AutomationProperties.AutomationId="TracksHubSection">
                 <DataTemplate>
                     <ListView ItemsSource="{Binding Tracks}"
                               ItemTemplate="{StaticResource LargeTextTrackItemTemplate}"
@@ -52,7 +54,8 @@
             </HubSection>
 
             <HubSection Header="{Binding SpeakersSectionTitle}"
-                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}"
+                        AutomationProperties.AutomationId="SpeakersHubSection">
                 <DataTemplate>
                     <SemanticZoom>
                         <SemanticZoom.ZoomedInView>
@@ -90,14 +93,16 @@
             </HubSection>
 
             <HubSection Header="{Binding CurrentLecturesSectionTitle}" 
-                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}"> 
+                        HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}"
+                        AutomationProperties.AutomationId="CurrentLecturesHubSection"> 
             </HubSection>
         </Hub>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar>
+        <CommandBar AutomationProperties.AutomationId="BottomAppBar">
             <CommandBar.PrimaryCommands>
-                <AppBarButton Label="лента"  Command="{Binding NavigateToTwitterFeedCommand}">
+                <AppBarButton Label="лента"  Command="{Binding NavigateToTwitterFeedCommand}"
+                              AutomationProperties.AutomationId="TwitterFeedAppBarButton">
                     <AppBarButton.Icon>
                         <BitmapIcon UriSource="{Binding TwitterIcon}"/>
                     </AppBarButton.Icon>
